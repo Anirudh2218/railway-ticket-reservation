@@ -1,0 +1,42 @@
+### Get all trains
+GET http://localhost:8080/api/reservation/trains
+
+### Get all tickets
+GET http://localhost:8080/api/reservation/tickets
+
+### Book a ticket (valid request)
+POST http://localhost:8080/api/reservation/book?trainNumber=16589
+Content-Type: application/json
+
+{
+    "passengerDTO": {
+        "name": "John Doe",
+        "age": 25,
+        "contact": "1234567890",
+        "aadhaar": "123456789012"
+    },
+    "paymentDTO": {
+        "paymentMethod": "UPI",
+        "paymentDetails": "john@upi"
+    }
+}
+
+### Book a ticket (invalid age)
+POST http://localhost:8080/api/reservation/book?trainNumber=16589
+Content-Type: application/json
+
+{
+    "passengerDTO": {
+        "name": "John Doe",
+        "age": 15,
+        "contact": "1234567890",
+        "aadhaar": "123456789012"
+    },
+    "paymentDTO": {
+        "paymentMethod": "UPI",
+        "paymentDetails": "john@upi"
+    }
+}
+
+### Cancel a ticket
+DELETE http://localhost:8080/api/reservation/cancel/1
