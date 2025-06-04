@@ -1,0 +1,21 @@
+# Gradle files
+.gradle/
+build/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# OS files
+.DS_Store
+
+# Logs
+*.log
+
+# H2 (optional if using file-based db)
+*.mv.db
+*.h2.db
+
+# Environment
+.env
